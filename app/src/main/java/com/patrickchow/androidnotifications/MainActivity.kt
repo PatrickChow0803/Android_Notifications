@@ -28,7 +28,9 @@ class MainActivity : AppCompatActivity() {
 
         btn_notification.setOnClickListener{
 
-            //val intent = Intent(this, LauncherActivity::class.java)
+            //Makes it so that when the notification is clicked on, the FullScreen Activity starts up
+            val intent = Intent(this, FullscreenActivity::class.java)
+            intent.putExtra("key", "Value was passed successfully")
             val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
